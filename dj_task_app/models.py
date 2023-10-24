@@ -16,7 +16,7 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
     start_date = models.DateField(blank=True, null=True)
-    end_date = models.DateField(blank=True, null=False)
+    end_date = models.DateField(blank=True, null=True)
 
     def __str__(self) -> str:
         return self.name 
@@ -28,5 +28,6 @@ class Comment(models.Model):
     content = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+
     def __str__(self) -> str:
-        return self.user
+        return str(self.user)
